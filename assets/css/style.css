@@ -1,13 +1,59 @@
+body {
+    background-color: rgb(255, 153, 0);
 
-.scoreboard {
+}
+
+.container-fluid {
+    margin-top: 5vh;
+}
+
+#scoreboard {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: space-evenly;
     height: 20vh;
     width: 80vw;
     border: 1px solid red;
 }
 
+
 .life {
-    background-image: url(../images/heart.jpeg)
+    background-image: url("../images/heart.png");
+    height: 10vh;
+    width: 15vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;   
+    border: 1px solid pink;
+    background-position: center;
+}
     
+
+.target {
+    height: 10vh;
+    width: 25vw;
+    border: 1px solid blue;
+    text-align: center; 
+    background-origin: center;
+}
+
+.egg-counter {
+    background-image: url("../images/egg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 15vw;
+    height: 10vh;
+    display: flex;
+    border: 1px solid green;
+    background-position: center;
+}
+
+#gameboard {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 60vh;
+    width: 80vw;
+    border: 1px solid white;
 }
