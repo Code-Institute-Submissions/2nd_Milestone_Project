@@ -66,14 +66,14 @@ body {
     background-position: center;
     background-size: cover;
     height: 60vh;
-    width: 80vw;
+    width: 100vw;
     border: 1px solid white;
 }
 
 .hen-container, .egg-container {
     margin-top: 10%;
     position: absolute;
-    width: 80vw;
+    width: 100vw;
 }
 
 .hen {
@@ -98,19 +98,19 @@ body {
     border: 1px solid greenyellow;
 }
 
-#egg1 {
+#egg1, #basket1 {
     position: absolute;
-    left: 20%;
+    left: 13%;
 }
 
-#egg2 {
+#egg2, #basket2 {
     position: absolute;
-    left: 50%;
+    left: 46%;
 }
 
-#egg3 {
+#egg3, #basket3 {
     position: absolute;
-    left: 65%;
+    left: 80%;
 }
 
 .sunnysideup-container, .basket-container {
@@ -139,14 +139,15 @@ body {
     height: 7vh;
     width: 8vw;
     border: 1px solid orange;
-    margin-bottom: 0px;
+    bottom: 0px;
+    z-index: 3;
 }
 
 .floor {
     height: 2em;
-    width: 80vw;
+    width: 100vw;
     background-color: rgba(154, 158, 158, 0.781);
     position: absolute;
-    bottom: 8%;
+    bottom: 10%;
 }
 

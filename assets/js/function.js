@@ -1,26 +1,30 @@
-$( document ).ready(function() {
-    animateDiv();
+$( document ).ready(function(){
+    animateDiv('#basket1');
+    layegg();
+    
 });
+   
 
 
-    // $('#hen1').click(function(){
-    //     $('#egg1').animate({
-    //         top: '500px',
-    //     }, 500);
-    // });
+function layegg(){
+    $('#hen1').click(function(){
+        $('#egg1').animate({
+            top: '500px',
+        }, 500);
+    });
 
-    //   $('#hen2').click(function(){
-    //     $('#egg2').animate({
-    //         top: '500px',
-    //     }, 500);
-    // });
+      $('#hen2').click(function(){
+        $('#egg2').animate({
+            top: '500px',
+        }, 500);
+    });
 
-    //  $('#hen3').click(function(){
-    //     $('#egg3').animate({
-    //         top: '500px',
-    //     }, 500);
-    // });
-
+     $('#hen3').click(function(){
+        $('#egg3').animate({
+            top: '500px',
+        }, 500);
+    });
+}
     /*--------------------------- Randomized horizontal movement for basket
     --take the dimension of gameboard, remove dimensions of basket*/
     
@@ -48,23 +52,73 @@ $( document ).ready(function() {
 // }
 //     newPosition();
 
+
+// var basketBoxX = document.querySelector('div#basket1.basket');
+//     var x = basketBoxX.getBoundingClientRect();
+//     console.log(x);
+
+//     var basketBoxY = document.querySelector('div#basket1.basket');
+//     var y = basketBoxY.getBoundingClientRect().left;
+//     console.log(y);
+
+//      var newX = Math.floor(Math.random() * x);
+
+//     function newP(){
+//        console.log[newX,y];
+//     }
+
+// var basketBoxX = document.querySelector('div#basket1.basket');
+//     var x = basketBoxX.getBoundingClientRect().top;
+//     console.log(x);
+
+ 
+//     var y = basketBoxX.getBoundingClientRect().left;
+//     console.log(y);
+
+
+//      var newX = Math.floor(Math.random() * x);
+//     console.log(newX);
+    
+//     function animateDiv(){
+//     var newPosition = [newX,y];
+
+//     $('.basket').animate({ top: newPosition[0], left: newPosition[1] }, function(){             
+//     animateDiv();
+//     });
+// }
+
+// $(document).ready(function(){
+//     $('#hen1').click(function(){
+//         $('#basket1').animate({
+//             right: '800px',
+//         }, 500);
+//     });   
+// });
+
+// $('#hen2').click(function(){
+//         $('#egg2').animate({
+//             top: '500px',
+//         }, 500);
+//     })
+
 function makeNewPosition(){
     
     // Get viewport dimensions (remove the dimension of the div)
-    var h = $(window).height();
-    var w = $(window).width();
+    var h = $('#gameboard').height() - 650;
+    var w = $('#gameboard').width() -7;
     
-    var nh = Math.ceil(Math.random() * h);
-    var nw = Math.ceil(Math.random() * w);
     
-    return [nh,nw];    
+   
+    var nw = Math.floor(Math.random() * w);
+    
+    return [h,nw];    
     
 }
 
-function animateDiv(){
+function animateDiv(myclass){
     var newq = makeNewPosition();
-    $('.basket').animate({ top: newq[0], left: newq[1] }, function(){
-      animateDiv();        
+    $(myclass).animate({ top: newq[0], left: newq[1] }, 1000,   function(){
+      animateDiv(myclass);        
     });
     
 };
