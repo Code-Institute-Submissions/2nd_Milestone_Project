@@ -5,6 +5,18 @@ body {
 
 .container-fluid {
     margin-top: 5vh;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.start {
+    display: none;
+    position: absolute;
+    top: 50vh;
+    z-index: 100;
+    background-color: pink;
+    height: 30px;
+    width: 100vw;
 }
 
 #scoreboard {
@@ -49,7 +61,7 @@ body {
 }
 
 #gameboard {
-    background-image: url("../images/background.jpg");
+    background-image: url("../images/galaxy.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -57,3 +69,84 @@ body {
     width: 80vw;
     border: 1px solid white;
 }
+
+.hen-container, .egg-container {
+    margin-top: 10%;
+    position: absolute;
+    width: 80vw;
+}
+
+.hen {
+    background-image: url("../images/chick.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 9vh;
+    width: 12vw;
+    border: 1px solid yellow;
+    
+}
+
+.egg {
+    /* display: none; */
+    background-image: url("../images/egg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 5vh;
+    width: 6vw;
+    border: 1px solid greenyellow;
+}
+
+#egg1 {
+    position: absolute;
+    left: 20%;
+}
+
+#egg2 {
+    position: absolute;
+    left: 50%;
+}
+
+#egg3 {
+    position: absolute;
+    left: 65%;
+}
+
+.sunnysideup-container, .basket-container {
+    bottom: 11%;
+    position: absolute;
+    width: 80vw;
+}
+
+.sunnysideup {
+    display: none;
+    background-image: url("../images/sunnysideup.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 5vh;
+    width: 8vw;
+    border: 1px solid greenyellow;
+    margin-bottom: 0px;
+}
+
+.basket {
+    background-image: url("../images/baskett.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 7vh;
+    width: 8vw;
+    border: 1px solid orange;
+    margin-bottom: 0px;
+}
+
+.floor {
+    height: 2em;
+    width: 80vw;
+    background-color: rgba(154, 158, 158, 0.781);
+    position: absolute;
+    bottom: 8%;
+}
+
