@@ -1,5 +1,7 @@
 $( document ).ready(function(){
     animateDiv('#basket1');
+    animateDiv('#basket2');
+    animateDiv('#basket3');
     layegg();
     
 });
