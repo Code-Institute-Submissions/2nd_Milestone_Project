@@ -99,17 +99,17 @@ body {
     margin-top: 4%;
 }
 
-#egg1, #basket1 {
+#egg1, #basket1, #sunnysideup1 {
     position: absolute;
     left: 13%;
 }
 
-#egg2, #basket2 {
+#egg2, #basket2, #sunnysideup2 {
     position: absolute;
     left: 46%;
 }
 
-#egg3, #basket3 {
+#egg3, #basket3, #sunnysideup3 {
     position: absolute;
     left: 80%;
 }
@@ -117,7 +117,7 @@ body {
 .sunnysideup-container, .basket-container {
     bottom: 11%;
     position: absolute;
-    width: 80vw;
+    width: 100vw;
 }
 
 .sunnysideup {
