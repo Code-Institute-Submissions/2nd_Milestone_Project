@@ -1,6 +1,6 @@
 body {
     background-color: rgb(255, 153, 0);
-
+    overflow: hidden;
 }
 
 .container-fluid {
@@ -65,13 +65,13 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 60vh;
+    height: 65vh;
     width: 100vw;
     border: 1px solid white;
 }
 
 .hen-container, .egg-container {
-    margin-top: 10%;
+    margin-top: 5%;
     position: absolute;
     width: 100vw;
 }
@@ -96,6 +96,7 @@ body {
     height: 5vh;
     width: 6vw;
     border: 1px solid greenyellow;
+    margin-top: 4%;
 }
 
 #egg1, #basket1 {
@@ -148,6 +149,6 @@ body {
     width: 100vw;
     background-color: rgba(154, 158, 158, 0.781);
     position: absolute;
-    bottom: 10%;
+    bottom: 5%;
 }
 

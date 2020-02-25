@@ -10,20 +10,20 @@ $( document ).ready(function(){
 
 function layegg(){
     $('#hen1').click(function(){
-        $('#egg1').animate({
-            top: '500px',
+        $('#egg1').show().animate({
+            top: '650px',
         }, 500);
     });
 
       $('#hen2').click(function(){
-        $('#egg2').animate({
-            top: '500px',
+        $('#egg2').show().animate({
+            top: '650px',
         }, 500);
     });
 
      $('#hen3').click(function(){
-        $('#egg3').animate({
-            top: '500px',
+        $('#egg3').show().animate({
+            top: '650px',
         }, 500);
     });
 }
@@ -123,4 +123,35 @@ function animateDiv(myclass){
       animateDiv(myclass);        
     });
     
-};
+}
+
+// function collision($div1, $div2) {
+    var x1 = $('#basket1').offset().left;
+    var y1 = $('#basket1').offset().top;
+    console.log(x1,y1);
+    //coordinates of first div
+    var h1 =  $('#basket1').outerHeight(true);
+    var w1 =  $('#basket1').outerWidth(true);
+    console.log(h1,w1);
+    //dimensions of div1 including padding, margin, border
+    var b1 = y1 + h1;
+    var r1 = x1 + w1;
+    console.log(b1,r1);
+    //offset plus dimesion?
+    var x2 = $('#egg1').offset().left;
+    var y2 = $('#egg1').offset().top;
+    console.log(x2,y2);
+
+    var h2 = $('#egg1').outerHeight(true);
+    var w2 = $('#egg1').outerWidth(true);
+    console.log(h2,w2); 
+    var b2 = y2 + h2;
+    var r2 = x2 + w2;
+
+    console.log(b2,r2); 
+
+//     if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
+//     return true;
+
+//     //if one of the statement is met, return false. Otherwise, there is collision.
+// }
