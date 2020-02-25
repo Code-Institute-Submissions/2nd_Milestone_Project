@@ -12,7 +12,7 @@ function layegg(){
     $('#hen1').click(function(){
         $('#egg1').show().animate({
             top: '620px',
-        }, 500).hide();
+        }, 500);
     });
 
       $('#hen2').click(function(){
