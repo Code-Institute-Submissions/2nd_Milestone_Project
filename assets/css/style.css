@@ -88,11 +88,11 @@ body {
     height: 9vh;
     width: 12vw;
     border: 1px solid yellow;
+    z-index: 3;
     
 }
 
 .egg {
-    display: none;
     background-image: url("../images/egg.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -100,6 +100,7 @@ body {
     height: 5vh;
     width: 6vw;
     border: 1px solid greenyellow;
+    z-index: 1;
    
 }
 

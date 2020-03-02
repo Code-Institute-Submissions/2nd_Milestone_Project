@@ -1,3 +1,13 @@
+let egg_Yposition = henContainer;
+function layEgg(egg){
+    $(".egg").click(function(){
+        //hen and egg container in same position
+        henContainer + 2;
+    });
+    
+}
+
+
 // $( document ).ready(function(){
 //     animateDiv('#basket1');
 //     animateDiv('#basket2');
@@ -8,20 +18,20 @@
    
 
 
-function layEgg(){
-    $('#hen1').click(function(){
-        $('#egg1').show().animate({
-            top: '620px'
-        }, 
-        {
-            duration: 700,
-            complete: function() {
-                $(this).animate({
-                   top: '350px' 
-                }, 20,);
-            },
-        });
-    });
+// function layEgg(){
+//     $('#hen1').click(function(){
+//         $('#egg1').show().animate({
+//             top: '620px'
+//         }, 
+//         {
+//             duration: 700,
+//             complete: function() {
+//                 $(this).animate({
+//                    top: '350px' 
+//                 }, 20,);
+//             },
+//         });
+//     });
 
 //       $('#hen2').click(function(){
 //         $('#egg2').show().animate({
@@ -128,18 +138,18 @@ function layEgg(){
 //         }, 500);
 //     })
 
-function makeNewPosition(){
+// function makeNewPosition(){
     
-    // Get viewport dimensions (remove the dimension of the div)
-    var h = $('#gameboard').height() - 650;
-    var w = $('#gameboard').width() -7;
+//     // Get viewport dimensions (remove the dimension of the div)
+//     var h = $('#gameboard').height() - 650;
+//     var w = $('#gameboard').width() -7;
     
     
-    var nw = Math.floor(Math.random() * w);
+//     var nw = Math.floor(Math.random() * w);
     
-    return [h,nw];    
+//     return [h,nw];    
     
-}
+// }
 
 
 //makes new coordinates and does callback
@@ -162,31 +172,31 @@ function makeNewPosition(){
 //         else alert();
 // }
 
-function collision($div1, $div2) {
-    var x1 = $div1.offset().left;
-    var y1 = $div1.offset().top;
+// function collision($div1, $div2) {
+//     var x1 = $div1.offset().left;
+//     var y1 = $div1.offset().top;
     
-    //coordinates of first div
-    var h1 =  $div1.outerHeight(true);
-    var w1 =  $div1.outerWidth(true);
+//     //coordinates of first div
+//     var h1 =  $div1.outerHeight(true);
+//     var w1 =  $div1.outerWidth(true);
    
-    //dimensions of div1 including padding, margin, border
-    var b1 = y1 + h1;
-    var r1 = x1 + w1;
+//     //dimensions of div1 including padding, margin, border
+//     var b1 = y1 + h1;
+//     var r1 = x1 + w1;
     
-    //distance from top vs. coordinate
-    var x2 = $div2.offset().left;
-    var y2 = $div2.offset().top;
+//     //distance from top vs. coordinate
+//     var x2 = $div2.offset().left;
+//     var y2 = $div2.offset().top;
    
 
-    var h2 = $div2.outerHeight(true);
-    var w2 = $div2.outerWidth(true);
+//     var h2 = $div2.outerHeight(true);
+//     var w2 = $div2.outerWidth(true);
     
-    var b2 = y2 + h2;
-    var r2 = x2 + w2;
+//     var b2 = y2 + h2;
+//     var r2 = x2 + w2;
 
-    //if one of the conditions is true, there is no collision
-    if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) 
-    return false;
-    return true;
-}};
+//     //if one of the conditions is true, there is no collision
+//     if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) 
+//     return false;
+//     return true;
+// }};
