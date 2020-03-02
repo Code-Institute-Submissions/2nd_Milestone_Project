@@ -1,32 +1,57 @@
-$( document ).ready(function(){
-    animateDiv('#basket1');
-    animateDiv('#basket2');
-    animateDiv('#basket3');
-    layegg();
+// $( document ).ready(function(){
+//     animateDiv('#basket1');
+//     animateDiv('#basket2');
+//     animateDiv('#basket3');
+//     layEgg();
     
-});
+// });
    
 
 
-function layegg(){
+function layEgg(){
     $('#hen1').click(function(){
         $('#egg1').show().animate({
-            top: '620px',
-        }, 500);
+            top: '620px'
+        }, 
+        {
+            duration: 700,
+            complete: function() {
+                $(this).animate({
+                   top: '350px' 
+                }, 20,);
+            },
+        });
     });
 
-      $('#hen2').click(function(){
-        $('#egg2').show().animate({
-            top: '620px',
-        }, 500);
-    });
+//       $('#hen2').click(function(){
+//         $('#egg2').show().animate({
+//             top: '620px',
+//         }, 700);
+//     });
 
-     $('#hen3').click(function(){
-        $('#egg3').show().animate({
-            top: '620px',
-        }, 500);
-    });
-}
+//      $('#hen3').click(function(){
+//         $('#egg3').show().animate({
+//             top: '620px',
+//         }, 700);
+//     });
+// }
+
+// function checkMissedEgg(egg){
+//     if (collision(egg, floor)){
+//         return true;
+//     }
+//         return false;
+
+// }
+
+
+
+// function backToInitialPosition(egg){
+//     egg.css('top', henContainer);
+
+// }
+
+
     /*--------------------------- Randomized horizontal movement for basket
     --take the dimension of gameboard, remove dimensions of basket*/
     
@@ -118,24 +143,24 @@ function makeNewPosition(){
 
 
 //makes new coordinates and does callback
-function animateDiv(myclass){
-    var newq = makeNewPosition();
-    $(myclass).animate({ top: newq[0], left: newq[1] }, 1000,   function(){
-      animateDiv(myclass);        
-    });
+// function animateDiv(myclass){
+//     var newq = makeNewPosition();
+//     $(myclass).animate({ top: newq[0], left: newq[1] }, 1000,   function(){
+//       animateDiv(myclass);        
+//     });
     
-}
+// }
 
-function missedEgg(egg){
-    var egg = $('.egg');
-    var floor = $('.floor');
+// function missedEgg(egg){
+//     var egg = $('.egg');
+//     var floor = $('.floor');
 
-        if (collision(egg, floor)){
-            $('#sunnysideup1').show();
-        }
+//         if (collision(egg, floor)){
+//             $('#sunnysideup1').show();
+//         }
 
-        else alert();
-}
+//         else alert();
+// }
 
 function collision($div1, $div2) {
     var x1 = $div1.offset().left;
@@ -161,6 +186,7 @@ function collision($div1, $div2) {
     var r2 = x2 + w2;
 
     //if one of the conditions is true, there is no collision
-    if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
+    if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) 
+    return false;
     return true;
-}
+}};
