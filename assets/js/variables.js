@@ -30,3 +30,6 @@ floor = $(".floor");
 life = 5;
 targetScore = 30;
 eggcounter = 0;
+anim_id = 0;
+egg_current_position = 0;
+speed = 2;

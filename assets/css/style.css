@@ -93,6 +93,7 @@ body {
 }
 
 .egg {
+    position: absolute;
     background-image: url("../images/egg.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -107,16 +108,19 @@ body {
 #egg1, #basket1, #sunnysideup1 {
     position: absolute;
     left: 13%;
+    top: 45%;
 }
 
 #egg2, #basket2, #sunnysideup2 {
     position: absolute;
     left: 46%;
+    top: 45%;
 }
 
 #egg3, #basket3, #sunnysideup3 {
     position: absolute;
     left: 80%;
+    top: 45%;
 }
 
 .sunnysideup-container, .basket-container {

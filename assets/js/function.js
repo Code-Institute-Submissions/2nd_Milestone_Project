@@ -1,10 +1,7 @@
 let egg_Yposition = henContainer;
 function layEgg(egg){
-    $(".egg").click(function(){
-        //hen and egg container in same position
-        henContainer + 2;
-    });
-    
+    egg_current_position = parseInt(egg.css('top'));
+    egg.css('top', egg_current_position + speed);
 }
 
 
