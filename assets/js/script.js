@@ -15,5 +15,7 @@
     animateDiv('#basket2');
     animateDiv('#basket3');
     layEgg();
+    playAudio();
+    
     
 });

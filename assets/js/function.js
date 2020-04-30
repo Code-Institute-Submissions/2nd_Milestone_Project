@@ -1,15 +1,13 @@
-// let egg_Yposition = henContainer;
-// function layEgg(egg){
-//     egg_current_position = parseInt(egg.css('top'));
-//     egg.css('top', egg_current_position + speed);
-// }
-
 
 
 function initialize() {
     $('#startBtn').click(function(){
         $(this).hide();
     });
+}
+
+function playAudio() {
+    $('#gameLoop').get(0).play();
 }
 
 
