@@ -1,47 +1,34 @@
-let egg_Yposition = henContainer;
-function layEgg(egg){
-    egg_current_position = parseInt(egg.css('top'));
-    egg.css('top', egg_current_position + speed);
+// let egg_Yposition = henContainer;
+// function layEgg(egg){
+//     egg_current_position = parseInt(egg.css('top'));
+//     egg.css('top', egg_current_position + speed);
+// }
+
+
+
+function initialize() {
+    $('#startBtn').click(function(){
+        $(this).hide();
+    });
 }
 
 
-// $( document ).ready(function(){
-//     animateDiv('#basket1');
-//     animateDiv('#basket2');
-//     animateDiv('#basket3');
-//     layEgg();
-    
-// });
-   
 
-
-// function layEgg(){
-//     $('#hen1').click(function(){
-//         $('#egg1').show().animate({
-//             top: '620px'
-//         }, 
-//         {
-//             duration: 700,
-//             complete: function() {
-//                 $(this).animate({
-//                    top: '350px' 
-//                 }, 20,);
-//             },
-//         });
-//     });
-
-//       $('#hen2').click(function(){
-//         $('#egg2').show().animate({
-//             top: '620px',
-//         }, 700);
-//     });
-
-//      $('#hen3').click(function(){
-//         $('#egg3').show().animate({
-//             top: '620px',
-//         }, 700);
-//     });
-// }
+function layEgg(){
+    $('.hen').click(function(){
+        $('.egg').show().animate({
+            top: '620px'
+        }, 
+        {
+            duration: 1000,
+            complete: function() {
+                $(this).hide().animate({
+                   top: '45px' 
+                }, 20,);
+            },
+        });
+    });
+}
 
 // function checkMissedEgg(egg){
 //     if (collision(egg, floor)){
@@ -119,7 +106,7 @@ function layEgg(egg){
 //     $('.basket').animate({ top: newPosition[0], left: newPosition[1] }, function(){             
 //     animateDiv();
 //     });
-// }
+// // }
 
 // $(document).ready(function(){
 //     $('#hen1').click(function(){
@@ -135,28 +122,28 @@ function layEgg(egg){
 //         }, 500);
 //     })
 
-// function makeNewPosition(){
+function makeNewPosition(){
     
-//     // Get viewport dimensions (remove the dimension of the div)
-//     var h = $('#gameboard').height() - 650;
-//     var w = $('#gameboard').width() -7;
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $('#gameboard').height() - 650;
+    var w = $('#gameboard').width() -7;
     
     
-//     var nw = Math.floor(Math.random() * w);
+    var nw = Math.floor(Math.random() * w);
     
-//     return [h,nw];    
+    return [h,nw];    
     
-// }
+}
 
 
 //makes new coordinates and does callback
-// function animateDiv(myclass){
-//     var newq = makeNewPosition();
-//     $(myclass).animate({ top: newq[0], left: newq[1] }, 1000,   function(){
-//       animateDiv(myclass);        
-//     });
+function animateDiv(myclass){
+    var newq = makeNewPosition();
+    $(myclass).animate({ top: newq[0], left: newq[1] }, 1000,   function(){
+      animateDiv(myclass);        
+    });
     
-// }
+}
 
 // function missedEgg(egg){
 //     var egg = $('.egg');

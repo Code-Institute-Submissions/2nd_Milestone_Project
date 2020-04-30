@@ -105,19 +105,19 @@ body {
    
 }
 
-#egg1, #basket1, #sunnysideup1 {
+#basket1 {
     position: absolute;
     left: 13%;
     top: 45%;
 }
 
-#egg2, #basket2, #sunnysideup2 {
+.egg, #basket2, #sunnysideup2 {
     position: absolute;
     left: 46%;
     top: 45%;
 }
 
-#egg3, #basket3, #sunnysideup3 {
+#basket3 {
     position: absolute;
     left: 80%;
     top: 45%;
@@ -161,3 +161,10 @@ body {
     bottom: 5%;
 }
 
+#startBtn {
+    position: absolute;
+    top: 400px;
+    left: 250px;
+    width: 200px;
+    font-size: 50px;
+}
