@@ -111,7 +111,7 @@ body {
     top: 45%;
 }
 
-.egg, #basket2, #sunnysideup2 {
+.egg, #basket2, #sunny_sideup {
     position: absolute;
     left: 46%;
     top: 45%;
@@ -129,8 +129,7 @@ body {
     width: 100vw;
 }
 
-.sunnysideup {
-    display: none;
+#sunny_sideup {
     background-image: url("../images/sunnysideup.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -139,6 +138,8 @@ body {
     width: 8vw;
     border: 1px solid greenyellow;
     margin-bottom: 0px;
+    z-index: 1;
+    visibility: hidden;
 }
 
 .basket {

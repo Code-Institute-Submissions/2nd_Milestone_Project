@@ -16,6 +16,7 @@
     animateDiv('#basket3');
     layEgg();
     playAudio();
+    collision();
     
     
 });

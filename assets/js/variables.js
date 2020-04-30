@@ -1,6 +1,6 @@
 
 
-let scoreboard = $("#scoreboard"),
+var scoreboard = $("#scoreboard"),
 life = $(".life"),
 targetScore = $(".target"),
 eggCounter = $(".egg-counter"),
@@ -11,8 +11,10 @@ henContainer = parseInt($(".hen-container").css("top")),
             //=parseInt($('.hen-container').offset().top;
 egg = $(".egg"),
 floor = $(".floor"),
-startBtn = $('#startBtn'),
-gameLoop = $('gameLoop');
+startBtn = $('#startBtn');
+
+const gameLoop = document.getElementById('gameLoop');
+
 
 //initial values
 life = 5;
