@@ -1,7 +1,7 @@
 
 
 function initialize() {
-    $('#startBtn').click(function(){
+    $startBtn.click(function(){
         $(this).hide();
     });
 }
@@ -17,29 +17,40 @@ function chickenSound() {
 
 
 function layEgg(){
-    $('.hen').click(function(){
-        $('.egg').show().animate({
+    hen.click(function(){
+        egg.show().animate({
             top: '620px'
         }, 
         {
-            duration: 1000,
+            duration: 2000,
             complete: function() {
-                $(this).hide().animate({
-                   top: '45px' 
-                }, 20,);
+                reloadEgg();
             },
         });
         chickenSound();
     });
 }
 
+function reloadEgg() {
+    egg.hide().css('top', '40px');
+}
+
+
+function loseLife() {
+    life-- ;
+}
+
+
+function updateScore() {
+    eggCount--;
+}
 
 
 function makeNewPosition(){
     
     // Get viewport dimensions (remove the dimension of the div)
-    let h = $('#gameboard').height() - 650;
-    let w = $('#gameboard').width() -7;
+    let h = gameboard.height() - 650;
+    let w = gameboard.width() -7;
     
     
     let newW = Math.floor(Math.random() * w);
@@ -59,6 +70,16 @@ function animateDiv(myclass){
 }
 
 
+//collision function
+
+// function collision(a, b){
+// 		return !(
+// 	    ((a.y + a.height) < (b.y)) ||
+// 	    (a.y > (b.y + b.height)) ||
+// 	    ((a.x + a.width) < b.x) ||
+// 	    (a.x > (b.x + b.width))
+// 		)
+// 	}
 
 function collision(div1, div2) {
     var x1 = div1.offset().left;
@@ -87,14 +108,21 @@ function collision(div1, div2) {
     if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2){
     return false;
     }
-    alert ("there is collision!");
+    return true;
     
 };
 
-
-function missedEgg(egg) {
-
-        if (collision(egg, floor)){
-            $('#sunny_sideup').show();
-        };
+function stopGAme() {
+    cancelAnimationFrame(anim_id);
+    restart.show();
 }
+
+// function restart() {
+
+//     $(this).click(function() {
+//     location.reload();
+// })
+
+
+
+

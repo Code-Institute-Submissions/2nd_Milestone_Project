@@ -43,7 +43,7 @@ body {
     justify-content: center;
 }
 
-.target {
+/* .target {
     height: 10vh;
     width: 25vw;
     border: 1px solid blue;
@@ -56,7 +56,7 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     display: flex;   
-}
+} */
 
 .egg-counter {
     background-image: url("../images/egg.png");
