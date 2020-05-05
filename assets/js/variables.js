@@ -1,25 +1,31 @@
 
 
-var scoreboard = $("#scoreboard"),
+let startBtn = $('#startBtn');
+scoreboard = $("#scoreboard"),
 life = $(".life"),
-targetScore = $(".target"),
+target = $(".target"),
 eggCounter = $(".egg-counter"),
-
 gameboard = $("#gameboard"),
 hen = $(".hen"),
-henContainer = parseInt($(".hen-container").css("top")),
-            //=parseInt($('.hen-container').offset().top;
+// henContainer = parseInt($(".hen-container").css("top")),
+//             //=parseInt($('.hen-container').offset().top;
 egg = $(".egg"),
 floor = $(".floor"),
-startBtn = $('#startBtn');
-
-const gameLoop = document.getElementById('gameLoop');
+basket1 = $('#basket1'),
+basket2 = $('#basket2'),
+basket3 = $('#basket3');
 
 
 //initial values
-life = 5;
+lifescore = 5;
+life.text(lifescore);
+
 targetScore = 30;
-eggcounter = 0;
-anim_id = 0;
-egg_current_position = 0;
-speed = 2;
+target.text(targetScore);
+
+eggCount = 0;
+eggCounter.text(eggCount);
+
+// anim_id = 0;
+// egg_current_position = 0;
+// speed = 2;
