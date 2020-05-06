@@ -59,13 +59,13 @@ function reloadEgg() {
 
 function loseLife() {
     lifescore--;
+    life.text(lifescore);
 }
 
 
 function updateScore() {
     eggCount--;
-
-    
+    eggCounter.text(eggCount);    
 }
 
 function showCrackEgg() {
@@ -128,12 +128,11 @@ function checkCollision(){
   var horizontalMatch = comparePositions(pos[0], pos2[0]);
   var verticalMatch = comparePositions(pos[1], pos2[1]);            
   var match = horizontalMatch && verticalMatch;
-  if (match) { console.log("collision!");
+  if (match == true) { console.log("collision!");
       updateScore();
       return true;
    } else {
        loseLife();
-       showCrackEgg();
        return false;
    }
 }
