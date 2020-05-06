@@ -42,28 +42,14 @@ function chickenSound() {
 
 
 
-// function layEgg(){
-//     hen.click(function(){
-//         egg.show().animate({
-//             top: '620px'
-//         }, 
-//         {
-//             duration: 2000,
-//             complete: function() {
-//                 reloadEgg();
-//             },
-//         });
-//         chickenSound();
-//     });
-// }
-
 function layEgg(){
     hen.click(function(){
         egg.show().animate({
             top: '620px'
-        }, 2000, reloadEgg);
-        // egg.animate({}, checkCollision);
+        }, 1500, reloadEgg);
+        chickenSound();
     });
+        
 }
 
 function reloadEgg() {
@@ -72,18 +58,21 @@ function reloadEgg() {
 
 
 function loseLife() {
-    life-- ;
+    lifescore--;
 }
 
 
 function updateScore() {
     eggCount--;
+
+    
+}
+
+function showCrackEgg() {
+    sunnySideup.show();
 }
 
 
-function eggOffset() {
-
-}
 
 function makeNewPosition(){
     
@@ -115,11 +104,11 @@ function animateDiv(myclass){
 
 // collision detection from Ryan Connolly JSfiddle
 // https://jsfiddle.net/ryanoc/TG2M7/
-function getPositions() {
+function getPositions(box) {
   var $box = $(box);
-  var pos = $box.position();
-  var width = $box.width();
-  var height = $box.height();
+  var pos = $box.offset();
+  var width = $box.outerHeight(true);
+  var height = $box.outerWidth(true);
   return [ [ pos.left, pos.left + width ], [ pos.top, pos.top + height ] ];
 //   console.log([ [ pos.left + width ], [ pos.top + height ] ]);
 }
@@ -131,14 +120,22 @@ function comparePositions(p1, p2) {
 }
 
 function checkCollision(){
-  var box = $(".egg")[0];
+  var box = $(egg)[0];
   var pos = getPositions(box);
-
-  var pos2 = getPositions($('.egg'));
+  console.log(box);
+  var pos2 = getPositions(this);
+  console.log(this);
   var horizontalMatch = comparePositions(pos[0], pos2[0]);
   var verticalMatch = comparePositions(pos[1], pos2[1]);            
   var match = horizontalMatch && verticalMatch;
-  if (match) { $("body").append("<p>COLLISION !!!</p>"); }
+  if (match) { console.log("collision!");
+      updateScore();
+      return true;
+   } else {
+       loseLife();
+       showCrackEgg();
+       return false;
+   }
 }
 
 
