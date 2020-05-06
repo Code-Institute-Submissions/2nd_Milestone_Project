@@ -1,10 +1,36 @@
 
 
-function initialize() {
-    $startBtn.click(function(){
-        $(this).hide();
-    });
-}
+// function initialize() {
+//     $startBtn.click(function(){
+//         $(this).hide();
+//     });
+// }
+
+function startGame(){
+
+    animateDiv(basket1);
+    animateDiv(basket2);
+    animateDiv(basket3);
+    playAudio();
+    layEgg();
+
+        // if (missedEgg()) {
+        //     if (collision(egg, floor)) {
+        //         alert('help!');
+        //         // $('#sunny_sideup').show();
+        //         // loseLife();
+        //         return true;
+        //     }
+        //         return false;
+        // }
+
+        // if (catchedEgg(egg)) {
+        //     if (collision($('.egg'), $('.basket'))) {
+        //         updateScore();
+        //     }
+        // }
+       
+    }
 
 function playAudio() {
    $('#gameLoop')[0].play();
@@ -16,18 +42,27 @@ function chickenSound() {
 
 
 
+// function layEgg(){
+//     hen.click(function(){
+//         egg.show().animate({
+//             top: '620px'
+//         }, 
+//         {
+//             duration: 2000,
+//             complete: function() {
+//                 reloadEgg();
+//             },
+//         });
+//         chickenSound();
+//     });
+// }
+
 function layEgg(){
     hen.click(function(){
         egg.show().animate({
             top: '620px'
-        }, 
-        {
-            duration: 2000,
-            complete: function() {
-                reloadEgg();
-            },
-        });
-        chickenSound();
+        }, 2000, reloadEgg);
+        // egg.animate({}, checkCollision);
     });
 }
 
@@ -46,10 +81,14 @@ function updateScore() {
 }
 
 
+function eggOffset() {
+
+}
+
 function makeNewPosition(){
     
     // Get viewport dimensions (remove the dimension of the div)
-    let h = gameboard.height() - 650;
+    let h = floorHeight - 40;
     let w = gameboard.width() -7;
     
     
@@ -57,20 +96,52 @@ function makeNewPosition(){
     
     return [h,newW];    
     
+    
 }
+
 
 
 //makes new coordinates and does callback for basket
 function animateDiv(myclass){
     var newPosition = makeNewPosition();
     $(myclass).animate({ top: newPosition[0], left: newPosition[1] }, 1000, function(){
-      animateDiv(myclass);        
+      animateDiv(myclass);
+    $(myclass).animate({}, checkCollision)        
     });
     
 }
 
 
-//collision function
+
+// collision detection from Ryan Connolly JSfiddle
+// https://jsfiddle.net/ryanoc/TG2M7/
+function getPositions() {
+  var $box = $(box);
+  var pos = $box.position();
+  var width = $box.width();
+  var height = $box.height();
+  return [ [ pos.left, pos.left + width ], [ pos.top, pos.top + height ] ];
+//   console.log([ [ pos.left + width ], [ pos.top + height ] ]);
+}
+        
+function comparePositions(p1, p2) {
+  var x1 = p1[0] < p2[0] ? p1 : p2;
+  var x2 = p1[0] < p2[0] ? p2 : p1;
+  return x1[1] > x2[0] || x1[0] === x2[0] ? true : false;
+}
+
+function checkCollision(){
+  var box = $(".egg")[0];
+  var pos = getPositions(box);
+
+  var pos2 = getPositions($('.egg'));
+  var horizontalMatch = comparePositions(pos[0], pos2[0]);
+  var verticalMatch = comparePositions(pos[1], pos2[1]);            
+  var match = horizontalMatch && verticalMatch;
+  if (match) { $("body").append("<p>COLLISION !!!</p>"); }
+}
+
+
 
 // function collision(a, b){
 // 		return !(
@@ -81,41 +152,71 @@ function animateDiv(myclass){
 // 		)
 // 	}
 
-function collision(div1, div2) {
-    var x1 = div1.offset().left;
-    var y1 = div1.offset().top;
+// function checkCollision(a, b) {
+//     var x1 = a.offset().left;
+//     var y1 = b.offset().top;
     
-    //coordinates of first div
-    var h1 = div1.outerHeight(true);
-    var w1 = div1.outerWidth(true);
+//     //coordinates of first div
+//     var h1 = a.outerHeight(true);
+//     var w1 = b.outerWidth(true);
    
-    //dimensions of div1 including padding, margin, border
-    var b1 = y1 + h1;
-    var r1 = x1 + w1;
+//     //dimensions of div1 including padding, margin, border
+//     var b1 = y1 + h1;
+//     var r1 = x1 + w1;
     
-    //distance from top vs. coordinate
-    var x2 = div2.offset().left;
-    var y2 = div2.offset().top;
+//     //distance from top vs. coordinate
+//     var x2 = a.offset().left;
+//     var y2 = b.offset().top;
    
 
-    var h2 = div2.outerHeight(true);
-    var w2 = div2.outerWidth(true);
+//     var h2 = a.outerHeight(true);
+//     var w2 = b.outerWidth(true);
     
-    var b2 = y2 + h2;
-    var r2 = x2 + w2;
+//     var b2 = y2 + h2;
+//     var r2 = x2 + w2;
 
-    //if one of the conditions is true, there is no collision
-    if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2){
-    return false;
-    }
-    return true;
+//     //if one of the conditions is true, there is no collision
+//     if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2){
+//     return false;
+//     }
+//     return true;   
+// }
+
+// function checkCollision(a,b) {
+//     var x1 = a.offset().left;
+//     var y1 = b.offset().top;
     
-};
+//     //coordinates of first div
+//     var h1 = a.outerHeight(true);
+//     var w1 = b.outerWidth(true);
+   
+//     //dimensions of div1 including padding, margin, border
+//     var b1 = y1 + h1;
+//     var r1 = x1 + w1;
+    
+//     //distance from top vs. coordinate
+//     var x2 = a.offset().left;
+//     var y2 = b.offset().top;
+   
 
-function stopGAme() {
-    cancelAnimationFrame(anim_id);
-    restart.show();
-}
+//     var h2 = a.outerHeight(true);
+//     var w2 = b.outerWidth(true);
+    
+//     var b2 = y2 + h2;
+//     var r2 = x2 + w2;
+
+//     //if one of the conditions is true, there is no collision
+//     if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2){
+//     return false;
+//     }
+//     return true;   
+// }
+
+
+// function stopGAme() {
+//     restart.show();
+//     startGame();
+// }
 
 // function restart() {
 
