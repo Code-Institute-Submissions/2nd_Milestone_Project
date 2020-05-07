@@ -15,6 +15,8 @@ floor = $(".floor"),
 basket1 = $('#basket1'),
 basket2 = $('#basket2'),
 basket3 = $('#basket3'),
+basket = $('.basket'),
+basketTop = parseInt(basket.css('top'));
 floorHeight = parseInt(floor.css('bottom'));
 
 
