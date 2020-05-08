@@ -43,7 +43,7 @@ body {
     justify-content: center;
 }
 
-/* .target {
+.title {
     height: 10vh;
     width: 25vw;
     border: 1px solid blue;
@@ -52,11 +52,11 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 30px;
-    background-image: url("../images/baskett.png");
+    background-image: url("../images/sunnysideup.png");
     background-repeat: no-repeat;
     background-size: contain;
     display: flex;   
-} */
+}
 
 .egg-counter {
     background-image: url("../images/egg.png");

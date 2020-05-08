@@ -4,8 +4,17 @@
     $(this).hide();
     
     startGame();
+
+
     });
 
+
+    // the_game = function() {
+    //     if (collision()) {
+    //         updateScore();  
+    //     }
+
+    // }
 
 
 

@@ -17,15 +17,16 @@ basket2 = $('#basket2'),
 basket3 = $('#basket3'),
 basket = $('.basket'),
 basketTop = parseInt(basket.css('top'));
-floorHeight = parseInt(floor.css('bottom'));
+floorHeight = parseInt(floor.css('bottom')),
+eggCount = 10;
 
 
 //initial values
-lifescore = 5;
-life.text(lifescore);
+// lifescore = 5;
+// life.text(lifescore);
 
 
 
-eggCount = 10;
-eggCounter.text(eggCount);
+// 
+// eggCounter.text(eggCount);
 
