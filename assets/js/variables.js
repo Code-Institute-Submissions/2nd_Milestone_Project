@@ -16,7 +16,7 @@ basket1 = $('#basket1'),
 basket2 = $('#basket2'),
 basket3 = $('#basket3'),
 basket = $('.basket'),
-basketTop = parseInt(basket.css('top'));
+basketTop = parseInt($('#basket1').offset().top);
 floorHeight = parseInt(floor.css('bottom')),
 eggCount = 10;
 
