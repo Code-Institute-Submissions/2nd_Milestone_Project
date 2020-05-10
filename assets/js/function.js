@@ -1,4 +1,14 @@
+$(window).on('load', function() {
+    $('#cover').fadeOut(200);
+});
 
+
+function pageInteractive() {
+    $(startBtn).click(function() {
+        $(this).hide();
+        startGame();
+    });
+}
 
 
 function startGame(){

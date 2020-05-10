@@ -1,6 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
 body {
     background-color: rgb(255, 153, 0);
     overflow: hidden;
+}
+
+#cover {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+
+}
+
+.titlebanner {
+    height: 100vh;
+    width: 100vw;
+    display: flex;   
+    align-items: center;
+    justify-content: center;
+    z-index: 9990;
+    position: absolute;
+    background-color: rgb(8, 8, 248);
+}
+
+.game-name{
+    font-family: "VT323", sans-serif;
+    font-size: 300px;
+    height: 30vh;
+    width: 50vw;
+}
+
+.titlebanner-image {
+    background-image: url("../images/PicsArt_05-10-01.27.38.png ");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 50vh;
+    width: 37vh;
 }
 
 .container-fluid {
@@ -9,15 +50,6 @@ body {
     padding-right: 0;
 }
 
-.start {
-    display: none;
-    position: absolute;
-    top: 50vh;
-    z-index: 100;
-    background-color: pink;
-    height: 30px;
-    width: 100vw;
-}
 
 #scoreboard {
     display: flex;
@@ -36,7 +68,6 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     display: flex;   
-    border: 1px solid pink;
     background-position: center;
     font-size: 30px;
     align-items: center;
@@ -46,7 +77,6 @@ body {
 .title {
     height: 10vh;
     width: 25vw;
-    border: 1px solid blue;
     text-align: center; 
     background-position: center;
     align-items: center;
@@ -65,7 +95,6 @@ body {
     width: 15vw;
     height: 10vh;
     display: flex;
-    border: 1px solid green;
     background-position: center;
     align-items: center;
     justify-content: center;
@@ -99,7 +128,6 @@ body {
     background-size: contain;
     height: 9vh;
     width: 12vw;
-    border: 1px solid yellow;
     z-index: 3;
     
 }
@@ -112,7 +140,6 @@ body {
     background-size: contain;
     height: 5vh;
     width: 6vw;
-    border: 1px solid greenyellow;
     z-index: 2;
     left: 46%;
    
@@ -155,7 +182,6 @@ body {
     background-size: contain;
     height: 5vh;
     width: 8vw;
-    border: 1px solid greenyellow;
     margin-bottom: 0px;
     z-index: 1;
     visibility: hidden;
@@ -168,7 +194,6 @@ body {
     background-size: contain;
     height: 7vh;
     width: 8vw;
-    border: 1px solid orange;
     bottom: 0px;
     z-index: 3;
 }
@@ -186,4 +211,6 @@ body {
     position: absolute;
     width: 200px;
     font-size: 50px;
+    background-color: pink;
+    visibility: hidden;
 }
