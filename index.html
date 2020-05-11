@@ -10,18 +10,16 @@
 </head>
 <body>
     <div id ="cover">
-        <div class="titlebanner">
-            <div class="covertext">Loading</div>
         </div>
-    </div>
-    <div id="titlepage">
-        <div class="titlebanner">
-            <span class="game-name"></span>
+    <div id="titlepage" class="container-fluid">
+        <div class="d-flex justify-content-center titlebanner">
+            <span class="game-name">Egg Drop Game</span>
             <div class="titlebanner-image"></div>
+             <button type="button" id="playBtn">Play</button>
         </div>
     </div>
     <div class="container-fluid" id="scoreboard">
-        <div class="life"><span class="timer">3:00</span></div>
+        <div class="life"><span class="timer"></span></div>
         <div class="title">Egg Drop Game</div>
         <div class="egg-counter"><span class="eggCount">10</span></div>
     </div>
@@ -37,7 +35,7 @@
         </div>
          <div class="d-flex justify-content-around basket-container">
             <div class="basket" id="basket1"></div>
-            <!-- <div  class="basket" id="basket2"></div> -->
+            <div  class="basket" id="basket2"></div>
             <div  class="basket" id="basket3"></div>
          </div>
         <div class="floor"></div>
@@ -48,6 +46,9 @@
         </div>
         <audio loop src="assets/audio/265549__vikuserro__cheap-flash-game-tune.mp3" id="gameLoop"></audio>
         <audio src="assets/audio/chickenlay.wav" id="chickenCluck"></audio>
+        <audio src="assets/audio/gameIntro.wav" id="gameIntro" allow="autoplay"></audio>
+        <audio src="assets/audio/gameEnd.mp3" id="gameEnd"></audio>
+        <audio src="assets/audio/hit.wav" id="hitSound"></audio>
     </div>
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

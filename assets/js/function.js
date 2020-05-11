@@ -1,27 +1,67 @@
 $(window).on('load', function() {
-    $('#cover').fadeOut(200);
+    $('#cover').delay(800).fadeOut(200);
 });
 
 
-function pageInteractive() {
-    $(startBtn).click(function() {
-        $(this).hide();
-        startGame();
-    });
-}
+$('#playBtn').click(function() {
+    $('#titlepage').hide();
+});
 
+$('#startBtn').click(function(){
+    $(this).hide();
+    startGame();
+    gameAudio();
+});
+
+let basket1 = $('#basket1'),
+basket2 = $('#basket2'),
+basket3 = $('#basket3');
 
 function startGame(){
     animateDiv(basket1);
-    // animateDiv(basket2);
+    animateDiv(basket2);
     animateDiv(basket3);
-    playAudio();
+    gameAudio();
     layEgg(egg);
-    chickenMouseOver();
-   
+    chickenMouseOver();  
+    timer();
 }
 
-function playAudio() {
+//------------------timer---------------------//
+function timer() {
+let startingMinutes = 3;
+time = startingMinutes * 60,
+countdown = $('.timer');
+
+setInterval(updateCountdown, 1000);
+}
+
+function updateCountdown(){
+    
+    let minutes = Math.floor(time / 60),
+    seconds = time % 60;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    
+    
+    countdown.innerHTML = `${minutes}:${seconds}`;
+    time--;
+}
+
+
+//-------------------audio--------------------//
+function gameIntro(){
+    $('#gameIntro')[0].play();
+}
+
+function gameEnd(){
+    $('#gameEnd')[0].play();
+}
+
+function hitSound(){
+    $('#hitSound')[0].play();
+}
+
+function gameAudio() {
    $('#gameLoop')[0].play();
 }
 
@@ -29,23 +69,27 @@ function chickenSound() {
     $('#chickenCluck')[0].play();
 }
 
-function chickenMouseOver(){
-    hen.hover(function(){
-        $(this).animate({
-            height: 80,
-            width: 100,
-        }, 100)
-    }, function(){
-        $(this).animate({
-            width: 62,
-            height: 89,
-        }, 100)
-    });
-}
+
+//-----------------------chicken------------//
+$('.hen').hover(function(){
+    $(this).animate({
+        height: '13vh',
+        width: '15vh',
+    }, 100)
+}, function(){
+    $(this).animate({
+        width: '10vh',
+        height: '12vh',
+    }, 100)
+});
+
+let hen = $('.hen'),
+egg = $('.egg');
 
 function layEgg(){
     hen.click(function(){
-        egg.show().animate({
+        basketTop = parseInt($('#basket1').offset().top);
+        (egg).show().animate({
             top: basketTop
         }, {
             duration: 1500,
@@ -61,28 +105,21 @@ function layEgg(){
 }
 
 function reloadEgg() {
-    egg.css('top', '40px');
+     (egg).css('top', '40px');
 }
 
-
+let eggCounter = $(".egg-counter");
 function updateScore() {
+    eggCount = 10
     eggCount--;
     eggCounter.text(eggCount);    
 }
 
-function showCrackedEgg(){
-    sunnySideup.show();
-}
-
-function hideCrackEgg() {
-    setTimeOut(function() {
-        sunnySideup.hide();
-    }, 800); 
-}
 
 
 //makes new coordinates and does callback for basket
 function animateDiv(myclass){
+    let egg = $('.egg');
     collision(egg, myclass);
     var newPosition = makeNewPosition();
     $(myclass).animate({ 
@@ -99,6 +136,9 @@ function animateDiv(myclass){
     });
 }
 
+let gameboard = $("#gameboard"), 
+floor = $('.floor'),
+floorHeight = parseInt(floor.css('bottom'));
 
 // Get viewport dimensions (remove the dimension of the div)
 function makeNewPosition(){ 
@@ -131,6 +171,7 @@ function collision(div1,div2) {
     } else {
         console.log('collision');
         updateScore();
+        hitSound();
         return true;     
 }}
 
