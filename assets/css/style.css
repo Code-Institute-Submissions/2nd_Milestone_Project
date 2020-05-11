@@ -247,3 +247,23 @@ body {
     z-index: 1;
 }
 
+.score {
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-family: "VT323", sans-serif;
+    background-color: rgb(8, 8, 248);
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+#play-againBtn{
+    position: absolute;
+    width: 200px;
+    font-size: 50px;
+    background-color: pink;
+    bottom: 46%;
+    font-family: "VT323", sans-serif;
+}

@@ -10,15 +10,13 @@ egg = $('.egg');
 gameboard = $("#gameboard"), 
 floor = $('.floor'),
 floorHeight = parseInt(floor.css('bottom')),
-minutes = $('#minutes'),
-min = 2;
-minutes.text(min);
 seconds = $('#seconds'),
-sec = 59;
+sec = 10;
 seconds.text(sec);
 eggCounter = $(".eggCount"),
-eggCount = 10;
-eggCounter.text(eggCount);
+eggCount = 0;
+eggCounter.text(eggCount),
+eggPos2 = 0;
 
 
 //-----------------------game start-----------------//
@@ -33,18 +31,21 @@ $('#startBtn').click(function(){
 });
 
 
-
 function startGame(){
-    animateDiv(basket1);
-    animateDiv(basket2);
-    animateDiv(basket3);
-    gameAudio();
-    layEgg(egg);
-    chickenMouseOver();
 
+        animateDiv(basket1);
+        animateDiv(basket2);
+        animateDiv(basket3);
+        gameAudio();
+        layEgg();
+        chickenMouseOver();
+        setInterval(countdown, 1000);
 }
-//------------------timer---------------------//
-
+//------------------timer and end game---------------------//
+function countdown(){
+    sec--;
+    seconds.text(sec); 
+}
 
 
 
@@ -86,6 +87,15 @@ $('.hen').hover(function(){
 }
 
 
+// function layEgg(){
+//     hen.click(function(){
+//     eggPos1 = egg.offset().top;
+//     egg.css('top', eggPos1 + 1);
+//     });
+// }
+
+
+
 function layEgg(){
     hen.click(function(){
         basketTop = parseInt($('#basket1').offset().top);
@@ -107,14 +117,6 @@ function layEgg(){
 function reloadEgg() {
      (egg).css('top', '40px');
 }
-
-
-function updateScore() {
-    eggCount--;
-    eggCounter.text(eggCount);    
-}
-
-
 
 //makes new coordinates and does callback for basket
 function animateDiv(myclass){
@@ -164,7 +166,6 @@ function collision(div1,div2) {
     //if one of the conditions is true, there is no collision
     if (b1 > y2 && y1 < b2 && r1 > x2 && x1 < r2 && b1 <= 922){
         
-        console.log('collision');
         updateScore();
         hitSound();
         return true;     
@@ -174,10 +175,11 @@ function collision(div1,div2) {
 }
 }
 
-// function stopGAme() {
-//    
-// }
-
-function restart() {
-    $('#titlepage').show();
+function updateScore() {
+    eggCount++;
+    eggCounter.text(eggCount);    
 };
+
+function endGame(){
+    $('.score').show();
+}

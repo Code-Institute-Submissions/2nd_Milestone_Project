@@ -19,8 +19,8 @@
     </div>
     <div class="container-fluid" id="scoreboard">
         <div class="life">
-            <span class="timer" id="minutes">3</span>
-            <span class="timer" id="seconds"><span class=" colon">:</span>59</span>
+            <span class="timer" id="seconds">200</span>
+            <span>sec</span>
             </div>
         <div class="title">Egg Drop Game</div>
         <div class="egg-counter"><span class="eggCount"></span></div>
@@ -42,6 +42,11 @@
         <div class="lose"></div>
         <div class="d-flex justify-content-around start-container">
             <button type="button" id="startBtn">Start</button>
+        </div>
+        <div class="d-flex justify-content-around endGame-container">
+            <div class="score">Your Score
+            <button type="button" id="play-againBtn">Play again?</button>
+            </div>
         </div>
         <audio loop src="assets/audio/265549__vikuserro__cheap-flash-game-tune.mp3" id="gameLoop"></audio>
         <audio src="assets/audio/chickenlay.wav" id="chickenCluck"></audio>
