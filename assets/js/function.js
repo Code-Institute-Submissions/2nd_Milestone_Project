@@ -16,10 +16,12 @@ seconds.text(sec);
 eggCounter = $(".eggCount"),
 eggCount = 0;
 eggCounter.text(eggCount),
-eggPos2 = 0;
+eggPos2 = 0,
+yourScore = $('#your-score'),
+score = 0;
 
 
-//-----------------------game start-----------------//
+//-----------------------buttons-----------------//
 $('#playBtn').click(function() {
     $('#titlepage').hide();
 });
@@ -30,6 +32,10 @@ $('#startBtn').click(function(){
     gameAudio();
 });
 
+$('#play-againBtn').click(function(){
+    location.reload();
+})
+
 
 function startGame(){
 
@@ -39,12 +45,24 @@ function startGame(){
         gameAudio();
         layEgg();
         chickenMouseOver();
-        setInterval(countdown, 1000);
+        
+        let timerId =setInterval(countdown, 1000);
+        setTimeout(() => { clearInterval(timerId);
+            return false; },
+            10000);
 }
 //------------------timer and end game---------------------//
 function countdown(){
+    
     sec--;
     seconds.text(sec); 
+
+    if (sec == '0'){
+        endGame();
+        $('gameLoop').pause();
+        gameEnd();
+        return false;
+    }
 }
 
 
@@ -85,14 +103,6 @@ $('.hen').hover(function(){
     }, 100);
 });
 }
-
-
-// function layEgg(){
-//     hen.click(function(){
-//     eggPos1 = egg.offset().top;
-//     egg.css('top', eggPos1 + 1);
-//     });
-// }
 
 
 
@@ -177,9 +187,11 @@ function collision(div1,div2) {
 
 function updateScore() {
     eggCount++;
-    eggCounter.text(eggCount);    
+    eggCounter.text(eggCount);
+    yourScore.text(eggCount);    
 };
 
 function endGame(){
     $('.score').show();
+    
 }

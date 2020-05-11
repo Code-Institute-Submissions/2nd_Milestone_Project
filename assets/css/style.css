@@ -248,15 +248,25 @@ body {
 }
 
 .score {
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    font-family: "VT323", sans-serif;
+    text-align: -webkit-center;
     background-color: rgb(8, 8, 248);
     display: none;
     height: 100%;
     width: 100%;
     position: absolute;
+    z-index: 99;
+    font-size: 7em;
+    font-family: "VT323", sans-serif;
+    color: rgb(240, 248, 255);
+}
+
+#your-score {
+    font-size: 1em;
+    font-family: "VT323", sans-serif;
+    color: rgb(240, 248, 255);
+    justify-content: center;
+    display: grid;
+   
 }
 
 #play-againBtn{
@@ -266,4 +276,5 @@ body {
     background-color: pink;
     bottom: 46%;
     font-family: "VT323", sans-serif;
+    left: 42%;
 }
