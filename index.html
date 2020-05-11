@@ -9,8 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div id ="cover">
-        </div>
+    <div id ="cover" class="container-fluid"><span class="loading">loading...</span></div>
     <div id="titlepage" class="container-fluid">
         <div class="d-flex justify-content-center titlebanner">
             <span class="game-name">Egg Drop Game</span>
@@ -19,9 +18,12 @@
         </div>
     </div>
     <div class="container-fluid" id="scoreboard">
-        <div class="life"><span class="timer"></span></div>
+        <div class="life">
+            <span class="timer" id="minutes">3</span>
+            <span class="timer" id="seconds"><span class=" colon">:</span>59</span>
+            </div>
         <div class="title">Egg Drop Game</div>
-        <div class="egg-counter"><span class="eggCount">10</span></div>
+        <div class="egg-counter"><span class="eggCount"></span></div>
     </div>
     <div class="container-fluid" id="gameboard">
         <div class="d-flex justify-content-around hen-container">
@@ -30,9 +32,6 @@
         <div class="d-flex justify-content-around egg-container">
             <div class="egg"></div>
          </div>
-        <div class="d-flex justify-content-around sunnysideup-container">
-            <div id="sunny_sideup"></div>
-        </div>
          <div class="d-flex justify-content-around basket-container">
             <div class="basket" id="basket1"></div>
             <div  class="basket" id="basket2"></div>
@@ -54,7 +53,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+<script type ="text/javascript" src="assets/js/jquery.simple.timer.js"></script>
 <script type="text/javascript" src="assets/js/variables.js"></script>
 <script type="text/javascript" src="assets/js/function.js"></script>
 <script type="text/javascript" src="assets/js/script.js"></script>

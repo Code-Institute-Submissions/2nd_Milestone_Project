@@ -10,11 +10,17 @@ body {
     position: fixed;
     height: 100%;
     width: 100%;
-    top: 0;
-    left: 0;
     z-index: 9999;
-    display: flex;
-   background-color: rgb(8, 8, 248);
+    background-color: rgb(8, 8, 248);
+    
+}
+
+.loading {
+    font-family: "VT323", sans-serif;
+    font-size: 7em;
+    color: rgb(240, 248, 255);
+    justify-content: center;
+    display: grid;
 }
 
 .titlepage {
@@ -98,6 +104,12 @@ body {
     align-items: center;
     justify-content: center;
     font-family: "VT323", sans-serif;
+}
+
+.colon {
+    font-size: 30px;
+    font-family: "VT323", sans-serif;
+    display: inline-block;
 }
 
 .title {
