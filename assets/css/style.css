@@ -106,12 +106,6 @@ body {
     font-family: "VT323", sans-serif;
 }
 
-.colon {
-    font-size: 30px;
-    font-family: "VT323", sans-serif;
-    display: inline-block;
-}
-
 .title {
     height: 10vh;
     width: 25vw;
@@ -191,7 +185,7 @@ body {
     top: 45%;
 }
 
-.egg, #basket2, #sunny_sideup {
+.egg, #basket2 {
     position: absolute;
     left: 46%;
     top: 45%;
@@ -209,23 +203,12 @@ body {
     width: 100vw; 
 }
 
-.sunnysideup-container, .basket-container {
+.basket-container {
     bottom: 11%;
     position: absolute;
     width: 100vw;
 }
 
-#sunny_sideup {
-    background-image: url("../images/sunnysideup.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    height: 5vh;
-    width: 8vw;
-    margin-bottom: 0px;
-    z-index: 1;
-    visibility: hidden;
-}
 
 .basket {
     background-image: url("../images/baskett.png");
@@ -266,7 +249,6 @@ body {
     color: rgb(240, 248, 255);
     justify-content: center;
     display: grid;
-   
 }
 
 #play-againBtn{

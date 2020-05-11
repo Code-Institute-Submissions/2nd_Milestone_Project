@@ -1,6 +1,13 @@
+/**
+ * shows a cover with loading... text while page is rendering
+ */
 $(window).on('load', function() {
     $('#cover').fadeOut(200);
 });
+
+/**
+ * global variables
+ */
 
 let basket1 = $('#basket1'),
 basket2 = $('#basket2'),
@@ -11,17 +18,16 @@ gameboard = $("#gameboard"),
 floor = $('.floor'),
 floorHeight = parseInt(floor.css('bottom')),
 seconds = $('#seconds'),
-sec = 10;
-seconds.text(sec);
 eggCounter = $(".eggCount"),
-eggCount = 0;
-eggCounter.text(eggCount),
-eggPos2 = 0,
 yourScore = $('#your-score'),
-score = 0;
+sec = 10,
+seconds.text(sec),
+eggCount = 0,
+eggCounter.text(eggCount);
 
-
-//-----------------------buttons-----------------//
+/**
+ * event-handlers
+ */
 $('#playBtn').click(function() {
     $('#titlepage').hide();
 });
@@ -36,7 +42,9 @@ $('#play-againBtn').click(function(){
     location.reload();
 })
 
-
+/**
+ * Start the Game
+ */
 function startGame(){
 
         animateDiv(basket1);
@@ -51,7 +59,13 @@ function startGame(){
             return false; },
             10000);
 }
-//------------------timer and end game---------------------//
+
+/**
+ * countdown for the timer
+ * when time is zero, the game sound pauses
+ * game ending song plays
+ * game reloads 
+ */
 function countdown(){
     
     sec--;
@@ -59,7 +73,7 @@ function countdown(){
 
     if (sec == '0'){
         endGame();
-        $('gameLoop').pause();
+        $('#gameLoop')[0].pause();
         gameEnd();
         return false;
     }
@@ -67,7 +81,9 @@ function countdown(){
 
 
 
-//-------------------audio--------------------//
+/**
+ * game sounds
+ */
 function gameIntro(){
     $('#gameIntro')[0].play();
 }
@@ -89,7 +105,10 @@ function chickenSound() {
 }
 
 
-//-----------------------chicken------------//
+/**
+ * hover chicken to change size
+ * might not work in some browsers
+ */
 function chickenMouseOver(){
 $('.hen').hover(function(){
     $(this).animate({
@@ -104,11 +123,13 @@ $('.hen').hover(function(){
 });
 }
 
-
-
+/**
+ * releases an egg once clicked
+ * drops the egg 
+ * plays cluck sound
+ */
 function layEgg(){
     hen.click(function(){
-        basketTop = parseInt($('#basket1').offset().top);
         (egg).show().animate({
             top: 600
         }, {
@@ -124,11 +145,24 @@ function layEgg(){
     });    
 }
 
+/**
+ * reloads the eggs to starting position
+ */
 function reloadEgg() {
      (egg).css('top', '40px');
 }
 
-//makes new coordinates and does callback for basket
+/**
+ * 
+ * parameter myclass points to the baskets
+ * animates the baskets to and fro across the screen
+ * checks for collision as the animation progresses
+ * reanimates in loop
+ * 
+ * collision() does not stop the animation
+ * so the scores tally all the collision until the animation is complete
+ * can be fixed in the future
+ */
 function animateDiv(myclass){
     collision(egg, myclass);
     var newPosition = makeNewPosition();
@@ -147,8 +181,10 @@ function animateDiv(myclass){
 }
 
 
-
-// Get viewport dimensions (remove the dimension of the div)
+/**
+ * get viewport dimensions
+ * make random coordinates for the basket animation
+ */
 function makeNewPosition(){ 
     var h = floorHeight - 40;
     var w = gameboard.width() -7;
@@ -156,6 +192,15 @@ function makeNewPosition(){
     return [h,newW];      
 }
 
+/**
+ * 
+ * @param {*} div1 first div to be compared
+ * @param {*} div2 second div to be compared
+ * 
+ * if all the conditions are met, then there is collision
+ * score is updated
+ * hit sound is played when basket hits the egg
+ */
 function collision(div1,div2) {
     var x1 = parseInt(div1.offset().left);
     var y1 = parseInt(div1.offset().top);
@@ -173,7 +218,7 @@ function collision(div1,div2) {
     var r2 = parseInt(x2 + div2.outerWidth(true));
     console.log(b2,r2);
 
-    //if one of the conditions is true, there is no collision
+    //if all of the conditions are true, there is collision
     if (b1 > y2 && y1 < b2 && r1 > x2 && x1 < r2 && b1 <= 922){
         
         updateScore();
@@ -185,13 +230,19 @@ function collision(div1,div2) {
 }
 }
 
+/**
+ * updates score on both the egg and on the endgame page
+ */
 function updateScore() {
     eggCount++;
     eggCounter.text(eggCount);
     yourScore.text(eggCount);    
 };
 
+/**
+ * shows the score and play again button 
+ * once the timer runs out
+ */
 function endGame(){
-    $('.score').show();
-    
+    $('.score').show();    
 }
