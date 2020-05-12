@@ -218,7 +218,11 @@ function collision(div1,div2) {
     var r2 = parseInt(x2 + div2.outerWidth(true));
     console.log(b2,r2);
 
-    //if all of the conditions are true, there is collision
+    /**
+     * if all of the conditions are met, then there is collision
+     * score will update when collision is met
+     * sound will play when basket is hit
+     */
     if (b1 > y2 && y1 < b2 && r1 > x2 && x1 < r2 && b1 <= 922){
         
         updateScore();
