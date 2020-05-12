@@ -1,5 +1,5 @@
 /**
- * shows a cover with loading... text while page is rendering
+ * shows a cover with "loading..."" text while page is rendering
  */
 $(window).on('load', function() {
     $('#cover').fadeOut(200);
@@ -12,6 +12,7 @@ $(window).on('load', function() {
 let basket1 = $('#basket1'),
 basket2 = $('#basket2'),
 basket3 = $('#basket3'),
+basket = $('.basket'),
 hen = $('.hen'),
 egg = $('.egg');
 gameboard = $("#gameboard"), 
@@ -20,7 +21,7 @@ floorHeight = parseInt(floor.css('bottom')),
 seconds = $('#seconds'),
 eggCounter = $(".eggCount"),
 yourScore = $('#your-score'),
-sec = 10,
+sec = 30,
 seconds.text(sec),
 eggCount = 0,
 eggCounter.text(eggCount);
@@ -57,7 +58,7 @@ function startGame(){
         let timerId =setInterval(countdown, 1000);
         setTimeout(() => { clearInterval(timerId);
             return false; },
-            10000);
+            30000);
 }
 
 /**
@@ -227,6 +228,8 @@ function collision(div1,div2) {
         
         updateScore();
         hitSound();
+        egg.stop();
+        reloadEgg();
         return true;     
     } else {
     
@@ -248,5 +251,6 @@ function updateScore() {
  * once the timer runs out
  */
 function endGame(){
-    $('.score').show();    
+    $('.score').show();  
+    basket.hide();  
 }
