@@ -1,11 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
 body {
     background-color: rgb(255, 153, 0);
+    overflow: hidden;
+}
 
+#cover {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+    background-color: rgb(8, 8, 248);
+    
+}
+
+.loading {
+    font-family: "VT323", sans-serif;
+    font-size: 7em;
+    color: rgb(240, 248, 255);
+    justify-content: center;
+    display: grid;
+}
+
+.titlepage {
+    z-index: 9990;
+}
+
+.titlebanner {
+    height: 100vh;
+    width: 100vw;
+    display: flex;   
+    z-index: 9980;
+    position: absolute;
+    background-color: rgb(8, 8, 248);
+}
+
+.game-name{
+    font-family: "VT323", sans-serif;
+    font-size: 7em;
+    height: 30vh;
+    width: 50vw;
+    display: inline-block;
+    text-align: end;
+    color: rgb(245, 193, 96);
+    margin-top: 9%;
+
+}
+
+.titlebanner-image {
+    background-image: url("../images/frontpic.png ");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 79vh;
+    width: 60vh;
+    margin-left: -1%;
+}
+
+.titlebanner button{
+    bottom: 45%;
+}
+
+#playBtn{
+    position: absolute;
+    width: 200px;
+    font-size: 50px;
+    background-color: pink;
+    bottom: 46%;
+    font-family: "VT323", sans-serif;
+    left: 45%;
+}
+
+#startBtn {
+    position: absolute;
+    width: 200px;
+    font-size: 50px;
+    background-color: pink;
+    font-family: "VT323", sans-serif;
 }
 
 .container-fluid {
     margin-top: 5vh;
+    padding-left: 0;
+    padding-right: 0;
 }
+
 
 #scoreboard {
     display: flex;
@@ -24,17 +104,26 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     display: flex;   
-    border: 1px solid pink;
     background-position: center;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    font-family: "VT323", sans-serif;
 }
-    
 
-.target {
+.title {
     height: 10vh;
     width: 25vw;
-    border: 1px solid blue;
     text-align: center; 
-    background-origin: center;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    background-image: url("../images/sunnysideup.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;   
+    font-family: "VT323", sans-serif;
 }
 
 .egg-counter {
@@ -44,16 +133,175 @@ body {
     width: 15vw;
     height: 10vh;
     display: flex;
-    border: 1px solid green;
     background-position: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-family: "VT323", sans-serif;
 }
 
 #gameboard {
-    background-image: url("../images/background.jpg");
+    background-image: url("../images/galaxy.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 60vh;
-    width: 80vw;
+    height: 65vh;
+    width: 100vw;
     border: 1px solid white;
+}
+
+.hen-container, .egg-container {
+    top: 35%;
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 73px;
+}
+
+.hen {
+    background-image: url("../images/chick.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 10vh;
+    width: 12vw;
+    z-index: 3;
+    
+}
+
+.egg {
+    position: absolute;
+    background-image: url("../images/egg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 5vh;
+    width: 6vw;
+    z-index: 2;
+    left: 46%;
+   
+}
+
+#basket1 {
+    position: absolute;
+    left: 13%;
+    top: 45%;
+}
+
+.egg, #basket2 {
+    position: absolute;
+    left: 46%;
+    top: 45%;
+}
+
+#basket3 {
+    position: absolute;
+    left: 80%;
+    top: 45%;
+}
+
+.start-container {
+    top: 50%;
+    position: absolute;
+    width: 100vw; 
+}
+
+.basket-container {
+    bottom: 11%;
+    position: absolute;
+    width: 100vw;
+}
+
+
+.basket {
+    background-image: url("../images/baskett.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 7vh;
+    width: 8vw;
+    bottom: 0px;
+    z-index: 3;
+}
+
+.floor {
+    height: 30px;
+    width: 100vw;
+    background-color: rgba(154, 158, 158, 0.781);
+    position: absolute;
+    bottom: 5%;
+    z-index: 1;
+}
+
+.score {
+    text-align: -webkit-center;
+    background-color: rgb(8, 8, 248);
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 99;
+    font-size: 7em;
+    font-family: "VT323", sans-serif;
+    color: rgb(240, 248, 255);
+}
+
+#your-score {
+    font-size: 1em;
+    font-family: "VT323", sans-serif;
+    color: rgb(240, 248, 255);
+    justify-content: center;
+    display: grid;
+}
+
+#play-againBtn{
+    position: absolute;
+    width: 200px;
+    font-size: 50px;
+    background-color: pink;
+    bottom: 46%;
+    font-family: "VT323", sans-serif;
+}
+
+/*
+* media queries
+*/
+ @media only screen and (min-width:600px){
+    #playBtn {
+        bottom: 29%;
+        left: 55%;
+    }
+}
+
+@media (max-width: 600px){
+    #playBtn {   
+        font-size: 28px;
+        left: 39%;
+        width: 3em;
+        height: 2em;
+        bottom: 31%;
+    }
+    .titlebanner-image{
+        margin-left: -32%;
+        margin-top: 43%;
+        height: 53vh;
+        width: 27vh;
+    }
+    .game-name {
+    font-size: 3em;
+    margin-top: 16%;
+    margin-left: 28%;
+    height: 8vh;
+    width: 34vw;
+    }
+    .score {
+        font-size: 3em;
+    }
+    #play-aganBtn{
+        font-size: 41px;
+        bottom: 54%;
+        left: 23%;
+    }
 }
