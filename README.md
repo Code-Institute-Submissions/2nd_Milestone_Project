@@ -71,7 +71,7 @@ but I can do so if I design other levels for the game.
 
 *Please be advised that am a beginner and am I still beginning to understand Git and GitHub. I shared my project to a friend to get some feedback and accidentally merged her comments. I already informed my course tutor about this and she said it would not be considered as a contribution and that I should mention it here in README file.
 
-1. My function.js file was run in JShint to detect errors.
+1. Js file was checked with JShint. CSS file was checked by Jigsaw validator. HTML was checked with HTML checker. All error detected were fixed.
 
 2. The entire game's layout looks almost exactly the same across different screen sizes except for the landing page which can alter depending on screen size.
 
@@ -88,6 +88,20 @@ To run locally, you can clone this repository directly into the editor of your c
  (link) into your terminal. To cut ties with this GitHub repository,
  type git remote rm origin into the terminal.
 
+The deployment version may have some alteration from the development version. Errors that I encountered were fixed:
+
+* top: 600 was changed to top: 1000 to accomodate larger screens
+
+                hen.click(function(){
+                        (egg).show().animate({
+                            top: 600
+                        }, {
+                            duration: 1500,
+                            complete: function() {
+                                reloadEgg();
+                            }
+                        });
+                    });
 
 ### Version Control
 

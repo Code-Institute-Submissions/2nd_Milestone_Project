@@ -132,7 +132,7 @@ $('.hen').hover(function(){
 function layEgg(){
     hen.click(function(){
         (egg).show().animate({
-            top: 600
+            top: 1000
         }, {
             duration: 1500,
             complete: function() {
@@ -160,9 +160,6 @@ function reloadEgg() {
  * checks for collision as the animation progresses
  * reanimates in loop
  * 
- * collision() does not stop the animation
- * so the scores tally all the collision until the animation is complete
- * can be fixed in the future
  */
 function animateDiv(myclass){
     collision(egg, myclass);
