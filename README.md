@@ -1,3 +1,6 @@
+<img src="wireframes/desk.png" height="300" width="400" alt="game">
+<img src="wireframes/mobile.png" height="300" width="200"alt="game">
+
 Second Milestone project:
 
 # Egg Drop Game
@@ -75,8 +78,9 @@ but I can do so if I design other levels for the game.
 
 2. The entire game's layout looks almost exactly the same across different screen sizes except for the landing page which can alter depending on screen size.
 
-3. The "loading..." (window.onload) part may take sometime to load depending on browsers. Loads fast on Chrome.
+3. Chrome browser did not have any issue. With Mozilla, the timer did not reach zero. With Opera, the score does not update when there is collision. With Explorer, the game does not get pass the loading stage. 
 
+4. The game was tested on Samsung Note10, S10 phones. No problem encountered. Unfortunately, I have no access to IOS as of the moment. 
 
 -------------
 ## Deployment
@@ -88,7 +92,12 @@ To run locally, you can clone this repository directly into the editor of your c
  (link) into your terminal. To cut ties with this GitHub repository,
  type git remote rm origin into the terminal.
 
-The deployment version may have some alteration from the development version. Errors that I encountered were fixed:
+
+### Version Control
+
+* The featureA branch contains all the development version which was merged to the master branch before deployment.
+
+The deployment version may have some alteration from the development version.
 
 * top: 600 was changed to top: 1000 to accomodate larger screens
 
@@ -102,11 +111,6 @@ The deployment version may have some alteration from the development version. Er
                             }
                         });
                     });
-
-### Version Control
-
-* The featureA branch contains all the development version which was merged to the master branch before deployment.
-
 
 -----
 ## Credits
