@@ -97,7 +97,7 @@ To run locally, you can clone this repository directly into the editor of your c
 
 * The featureA branch contains all the development version which was merged to the master branch before deployment.
 
-The deployment version may have some alteration from the development version.
+The deployment version may have some minor alterations of the comments from the development version. Otherwise, changes will be mentioned below:
 
 * top: 600 was changed to top: 1000 to accomodate larger screens
 
